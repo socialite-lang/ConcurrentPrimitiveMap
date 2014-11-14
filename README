@@ -1,8 +1,7 @@
 ConcurrentPrimitiveMap
-======================
 
-Concurrent skip list map based on java.util.concurrent.ConcurrentSkipListMap, and 
-optimized for primitive type keys (int, long, float and double).
+Concurrent skip list map based on java.util.concurrent.ConcurrentSkipListMap, 
+and optimized for primitive type keys (int, long, float and double).
 
 The following methods are supported (for ConcurrentIntSkipListMap):
  - Map API methods
