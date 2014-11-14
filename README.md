@@ -5,15 +5,15 @@ Concurrent skip list map based on java.util.concurrent.ConcurrentSkipListMap, an
 optimized for primitive type keys (int, long, float and double).
 
 The following methods are supported (for ConcurrentIntSkipListMap):
- -Map API methods
-   public boolean containsKey(int key)
-   public V get(int key)
-   public V put(int key, V value)
-   public V remove(int key)
-   public boolean containsValue(Object value)
-   public int size()
-   public boolean isEmpty()
-   public void clear()
+ - Map API methods
+    public boolean containsKey(int key)
+    public V get(int key)
+    public V put(int key, V value)
+    public V remove(int key)
+    public boolean containsValue(Object value)
+    public int size()
+    public boolean isEmpty()
+    public void clear()
  
  - ConcurrentMap API methods
     public V putIfAbsent(int key, V value)
@@ -23,12 +23,12 @@ The following methods are supported (for ConcurrentIntSkipListMap):
     public int firstKey()
     public int lastKey()
  
-  - Relational operations
-     public MapEntry.IntKeyEntry<V> lowerEntry(int key)
-     public int lowerKey(int key)
-     public MapEntry.IntKeyEntry<V> floorEntry(int key)
-     public int floorKey(int key) {
-     public MapEntry.IntKeyEntry<V> ceilingEntry(int key)
-     public int ceilingKey(int key) {
-     public MapEntry.IntKeyEntry<V> higherEntry(int key)
-     public int higherKey(int key)
+ - Relational operations
+    public MapEntry.IntKeyEntry<V> lowerEntry(int key)
+    public int lowerKey(int key)
+    public MapEntry.IntKeyEntry<V> floorEntry(int key)
+    public int floorKey(int key) 
+    public MapEntry.IntKeyEntry<V> ceilingEntry(int key)
+    public int ceilingKey(int key) 
+    public MapEntry.IntKeyEntry<V> higherEntry(int key)
+    public int higherKey(int key)
