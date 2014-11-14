@@ -1,0 +1,46 @@
+<project name="concurrentPrimMap" default="compile" basedir=".">
+    <property name="version" value="1.0.0" />
+    <property name="src" value="${basedir}/src" />
+    <property name="classes" value="${basedir}/classes" />
+    <property name="distdir" value="${basedir}/dist" />
+    <property name="lib" value="${basedir}/ext/" />
+    <property name="debug" value="Yes" />
+
+    <path id="classpath">
+      <pathelement location="${classes}"/>
+      <fileset dir="${lib}">
+        <include name="**/*.jar"/>
+      </fileset>
+    </path>
+
+    <target name="clean" depends="init">
+        <delete> 
+            <fileset dir="${classes}/">
+                <include name="**/*.class"/>
+                <include name="**/*.jar"/>
+                <include name="**/*.stg"/>
+                <exclude name="**/*.sh"/>
+            </fileset>
+        </delete>
+    </target>
+
+    <target name="init">
+        <mkdir dir="${classes}"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac includeantruntime="false" srcdir="${src}" destdir="${classes}" debug="${debug}">
+          <classpath refid="classpath"/>
+        </javac>
+        <copy todir="${classes}">
+            <fileset dir="${src}" excludes="**/*.java"/>
+        </copy>
+        <jar jarfile="${basedir}/concurrent-prim-map-${version}.jar">
+            <fileset dir="${classes}">
+                <include name="**/*.class"/>
+                <include name="**/*.stg"/>
+                <exclude name="**/*.jar"/>
+            </fileset>
+        </jar>
+    </target>
+</project>
